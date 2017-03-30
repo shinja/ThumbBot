@@ -47,7 +47,6 @@ def callback():
 
 
 
-
 @handler.default()
 def default(event):
     app.logger.info("default handler: " + event)
@@ -62,8 +61,8 @@ def handle_message(event):
     if messageObj:
         line_bot_api.reply_message(event.reply_token, messageObj)
 
-
-
 if __name__ == "__main__":
     # app.run(host="0.0.0.0", debug=True) 
-    app.run(host="0.0.0.0")
+    # app.run(host="0.0.0.0")
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

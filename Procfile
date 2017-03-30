@@ -1,1 +1,1 @@
-web: python thumbbot.py ps:scale web=1
+web: python thumbbot.py 
