@@ -23,9 +23,9 @@ handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
 sendMessageFactory = SendMessageFactory()
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+# @app.route('/')
+# def hello_world():
+#     return 'Hello, World!'
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -46,10 +46,9 @@ def callback():
     return 'OK'
 
 
-
-@handler.default()
-def default(event):
-    app.logger.info("default handler: " + event)
+# @handler.default()
+# def default(event):
+#     app.logger.info("default handler: " + event)
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
