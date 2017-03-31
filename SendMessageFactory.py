@@ -46,7 +46,7 @@ class URLFactory:
     # static variable
     patterns = [
         URLPattern(url_protocol_regex + '((i\.imgur\.com\/)([\w]+)(\.(jpg|png|gif)))', imgur_handler),
-        URLPattern(url_protocol_regex + '.*youtu\.?be.*\/(watch\?v=)?([\w]+)', youtube_handler)
+        URLPattern(url_protocol_regex + '.*youtu\.?be.*\/(watch\?v=)?([\w\-]+)', youtube_handler)
     ]
 
     def __init__(self, url):
