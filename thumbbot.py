@@ -12,7 +12,7 @@ from linebot.exceptions import (
 )
 
 from linebot.models import (
-    MessageEvent, TextMessage
+    MessageEvent, TextMessage, TextSendMessage
 )
 
 
@@ -59,6 +59,7 @@ def handle_message(event):
 
     if messageObj:
         line_bot_api.reply_message(event.reply_token, messageObj)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='懶趴不夠大幹話不嫌少有洞直須插悔叫大懶趴'))
 
 if __name__ == "__main__":
     # app.run(host="0.0.0.0", debug=True) 
